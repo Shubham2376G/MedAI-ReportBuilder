@@ -15,19 +15,20 @@ It focuses on **artifact-free diabetic retinopathy (DR) diagnosis** by combining
 - **ICD Code Prediction**: Automated mapping of diagnoses to ICD-10 codes.  
 - **Report Generation**: End-to-end system that outputs standardized PDF medical reports.  
 - **Database Support**: Patient data stored and retrieved via SQLite.  
-- **Deployment Ready**: Dockerized setup for easy reproducibility.
+- **Deployment Ready**: Dockerized setup for easy reproducibility.  
+- **Interactive UI**: Built using **Streamlit** for a simple, web-based workflow.
 
 ---
 
 ## 🗂️ Project Structure
 ```
 .
-├── app.py              # Main entry point (report generation pipeline)
+├── app.py              # Streamlit web app (main entry point)
 ├── backup.py           # Backup utility
 ├── db.py               # SQLite database handling
 ├── data/               # Raw/processed data
 ├── hospital.db         # Sample SQLite database
-├── models/             # Trained AI models (artifact remover, classifier)
+├── models/             # Folder for trained AI models (download weights here)
 ├── outputs/            # Generated reports and results
 ├── sample_input/       # Example patient data and fundus images
 ├── template/           # Report templates (PDF/HTML)
@@ -44,8 +45,8 @@ It focuses on **artifact-free diabetic retinopathy (DR) diagnosis** by combining
 ## ⚙️ Installation
 1. Clone the repo:
    ```bash
-   git clone https://github.com/your-username/MediReportAI.git
-   cd MediReportAI
+   git clone https://github.com/Shubham2376G/MedAI-ReportBuilder.git
+   cd MedAI-ReportBuilder
    ```
 
 2. Install dependencies:
@@ -53,22 +54,21 @@ It focuses on **artifact-free diabetic retinopathy (DR) diagnosis** by combining
    pip install -r requirements.txt
    ```
 
-3. (Optional) Build with Docker:
-   ```bash
-   docker build -t medireportai .
-   docker run -p 8501:8501 medireportai
-   ```
+3. Download pretrained model weights and place them in the `models/` directory:
+
+   https://drive.google.com/drive/folders/1d8DAmY1zOfN4QyncD6phN_z3QUeIxXX3?usp=sharing
+
 
 ---
 
 ## 🖥️ Usage
-Run the app to process sample input data and generate reports:
+Run the **Streamlit app**:
 ```bash
-python app.py
+streamlit run app.py
 ```
 
 - Input: Patient demographics + retinal fundus images.  
-- Output: PDF report with DR severity, ICD-10 codes, Grad-CAM heatmaps, and recommendations.  
+- Output: PDF report with DR severity, Grad-CAM heatmaps, and ICD-10 codes.  
 
 Sample input is available in `sample_input/`, and generated reports will be stored in `outputs/`.
 
@@ -79,16 +79,15 @@ Sample input is available in `sample_input/`, and generated reports will be stor
 📑 See the [Presentation](./Presentation.pdf) for the technical overview.  
 
 ### Sample Report (Preview)
-![Sample Report](<ADD_LINK_HERE>)
+![Sample Report](images/r1.png)
 
 ---
 
 ## 🧩 Tech Stack
-- **Python** (FastAPI/Streamlit for frontend, PyTorch for AI models)  
+- **Python** (Streamlit frontend, PyTorch for AI models)  
 - **SQLite** for database integration  
 - **U-Net with Residual Blocks** for artifact removal  
 - **Grad-CAM** for explainability  
-- **Docker** for deployment  
 
 ---
 
@@ -102,3 +101,4 @@ Sample input is available in `sample_input/`, and generated reports will be stor
 ## 📜 License
 This project is licensed under the [MIT License](./LICENSE).  
 
+---
