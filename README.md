@@ -23,11 +23,11 @@ It focuses on **artifact-free diabetic retinopathy (DR) diagnosis** by combining
 ## 🗂️ Project Structure
 ```
 .
-├── app.py              # Streamlit web app (main entry point)
-├── backup.py           # Backup utility
+├── app.py              # Streamlit web app
+├── backup.py           
 ├── db.py               # SQLite database handling
-├── data/               # Raw/processed data
-├── hospital.db         # Sample SQLite database
+├── data/               
+├── hospital.db         
 ├── models/             # Folder for trained AI models (download weights here)
 ├── outputs/            # Generated reports and results
 ├── sample_input/       # Example patient data and fundus images
@@ -35,9 +35,8 @@ It focuses on **artifact-free diabetic retinopathy (DR) diagnosis** by combining
 ├── utils/              # Helper functions
 ├── Demo.mp4            # Demo video of the system
 ├── Presentation.pdf    # Technical overview & slides
-├── requirements.txt    # Python dependencies
-├── Dockerfile          # Docker environment
-└── README.md           # Documentation (this file)
+├── requirements.txt   
+└── README.md          
 ```
 
 ---
